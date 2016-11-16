@@ -39,7 +39,8 @@ class CssTask extends Elixir.Task {
      * Register file watchers.
      */
     registerWatchers() {
-        this.watch(this.src.baseDir + Elixir.config.css[this.name].search)
+        this.watch(this.src.path)
+            .watch(this.src.baseDir + Elixir.config.css[this.name].search)
             .ignore(this.output.path);
     }
 
